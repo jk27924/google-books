@@ -1,8 +1,43 @@
 import React, { Component } from 'react';
 import "./Search.css";
+import API from "../../utils/API";
 import Jumbotron from "../Jumbotron/Jumbotron";
 
 class SearchPage extends Component {
+// onClick for the submit button.
+// That on click event should call a function in your react component.
+// That function from step 2 will make the api request to your server using axios. The request should be sending the book title that the user typed in with the request. 
+
+    state = {
+        books: [],
+        title: ""
+    }
+
+    loadBooks = () => {
+        API.getBooks()
+            .then(res =>
+                this.setState({ books: res.data, title: ""})
+            )
+            .catch(err => console.log(err));
+    };
+
+
+
+
+
+    handleFormSubmit = event => {
+        event.preventDefault();
+
+        if (this.state.title) {
+        API.saveBook({
+            title: this.state.title,
+        })
+            .then(res => this.loadBooks())
+            .catch(err => console.log(err));
+        }
+    };
+
+
     render () {
         return (
             <main>
@@ -14,8 +49,6 @@ class SearchPage extends Component {
                 <div className="submit__button">
                     <button className="submit__btn btn btn-primary">GOOGLE SEARCH</button>
                 </div>
-
-
             </main>
         )
     };
