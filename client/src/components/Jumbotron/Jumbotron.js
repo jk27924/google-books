@@ -1,10 +1,12 @@
 import React from "react";
 import "./Jumbotron.css";
+import JumbotronImage from "../../jumbotronImage1.png";
+
 
 function Jumbotron() {
     return (
       <div className="jumbotron text-center">
-          <h2>Google Books Search Jumbotron</h2>
+        <img src={JumbotronImage} alt="Google Book Search Jumbotron"/>
       </div>
     );
   }

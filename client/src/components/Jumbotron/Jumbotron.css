@@ -5,5 +5,14 @@
     text-align: center;
     font-size: 25px;
     margin-top: 80px;
-    color: black;
+    color: whitesmoke;
+    text-shadow: black 2px;
+    background: white;
 }
+
+.jumbotron img {
+    width: 100%;
+    position: relative;
+    z-index: 100;
+}
+

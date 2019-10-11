@@ -12,7 +12,7 @@ class SearchPage extends Component {
                 </div>
                 <div className="spacer"></div>
                 <div className="submit__button">
-                    <button className="submit__btn btn btn-primary">SUBMIT</button>
+                    <button className="submit__btn btn btn-primary">GOOGLE SEARCH</button>
                 </div>
 
 

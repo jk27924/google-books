@@ -53,5 +53,5 @@
 .navbar__logo a:hover,
 .navbar__navigation-items a:hover,
 .navbar__navigation-items a:active {
-    color: gold;
+    color: rgb(104, 104, 103);
 }
