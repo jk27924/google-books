@@ -1,0 +1,7 @@
+.jumbotron {
+    background: yellow;
+    min-height: 200px;
+    border: none;
+    text-align: center;
+    font-size: 25px;
+}
