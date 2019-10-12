@@ -22,9 +22,6 @@ class SearchPage extends Component {
     };
 
 
-
-
-
     handleFormSubmit = event => {
         event.preventDefault();
 
@@ -37,17 +34,16 @@ class SearchPage extends Component {
         }
     };
 
-
     render () {
         return (
             <main>
                 <Jumbotron />
                 <div className="search__field">
-                    <form className="search__bar"><input type="text"></input></form>   
+                    <form className="search__bar"><input onChange={this.loadBooks} type="text"></input></form>   
                 </div>
                 <div className="spacer"></div>
                 <div className="submit__button">
-                    <button className="submit__btn btn btn-primary">GOOGLE SEARCH</button>
+                    <button onClick={this.handleFormSubmit} className="submit__btn btn btn-primary">GOOGLE SEARCH</button>
                 </div>
             </main>
         )
