@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.css";
 import Navbar from "./components/Nav/Nav";
-import Jumbotron from "./components/Jumbotron/Jumbotron"
+// import Jumbotron from "./components/Jumbotron/Jumbotron"
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import SearchPage from "./components/Pages/Search";
 // import SavedPage from "./components/Pages/Saved";
