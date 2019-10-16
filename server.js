@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const mongoose = require("mongoose");
 const axios = require("axios");
-const routes = require("./routes");
+const googleAPI = require("./routes/searchAPI");
 
 
 // Define middleware here
@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Add routes
-app.use(routes);
+app.use("/books", googleAPI.findAll);
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
