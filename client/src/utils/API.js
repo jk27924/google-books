@@ -3,7 +3,7 @@ import axios from "axios";
 export default {
   // Gets all books
   getBooks: function(q) {
-    return axios.get("/api/google", { params: { q: "title:" + q } });
+    return axios.get("/books", { params: q });
   },
   // Deletes the book with the given id
   deleteBook: function(id) {

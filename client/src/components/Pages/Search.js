@@ -21,16 +21,26 @@ class SearchPage extends Component {
             .catch(err => console.log(err));
     };
 
+    // Handles updating component state when the user types into the input field
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
+    };
+
 
     handleFormSubmit = event => {
         event.preventDefault();
 
         if (this.state.title) {
-        API.saveBook({
-            title: this.state.title,
-        })
-            .then(res => this.loadBooks())
-            .catch(err => console.log(err));
+        
+        API.getBooks(this.state.title);
+        // API.saveBook({
+        //     title: this.state.title,
+        // })
+        //     .then(res => this.loadBooks())
+        //     .catch(err => console.log(err));
         }
     };
 
@@ -39,7 +49,14 @@ class SearchPage extends Component {
             <main>
                 <Jumbotron />
                 <div className="search__field">
-                    <form className="search__bar"><input onChange={this.loadBooks} type="text"></input></form>   
+                    <form className="search__bar"><input 
+                        value={this.state.title}
+                        onChange={this.handleInputChange} 
+                        name="title"
+                        type="text"
+                        placeholder="  Find a Book">
+                        </input>
+                    </form>   
                 </div>
                 <div className="spacer"></div>
                 <div className="submit__button">
