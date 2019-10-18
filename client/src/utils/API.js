@@ -5,6 +5,7 @@ export default {
   getBooks: function(q) {
     return axios.get("/books", { params: q });
   },
+
   // Deletes the book with the given id
   deleteBook: function(id) {
     return axios.delete("/api/books/" + id);

@@ -21,6 +21,17 @@ class SearchPage extends Component {
             .catch(err => console.log(err));
     };
 
+    componentDidMount = () => {
+        this.loadBooks();
+    };
+
+    getBooks = (q) => {
+        API.getBooks(q)
+            .then(res => this.setState({ books: res.data }, this.loadBooks()))
+            .catch(err => console.log(err));
+    };
+
+
     // Handles updating component state when the user types into the input field
     handleInputChange = event => {
         const { name, value } = event.target;
