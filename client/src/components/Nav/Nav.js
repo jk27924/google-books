@@ -1,5 +1,7 @@
 import React from "react";
 import "./Nav.css";
+import { Link } from "react-router-dom";
+
 
 
 const Navbar = props => (
@@ -10,10 +12,10 @@ const Navbar = props => (
             <div className="navbar__navigation-items">
                 <ul>
                 <li>
-                    <a href="/">SEARCH</a>
+                    <Link to="/">SEARCH</Link>
                 </li>
                 <li>
-                    <a href="/">SAVED</a>
+                    <Link to="/SavedPage">SAVED</Link>
                 </li>
                 </ul>
             </div>
