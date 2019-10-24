@@ -15,9 +15,9 @@ class SearchPage extends Component {
 
     loadBooks = () => {
         API.getBooks()
-            .then(res =>
-                this.setState({ books: res.data, title: ""})
-            )
+            .then(res => {
+                this.setState({ books: res.data.items, title: ""})
+            })
             .catch(err => console.log(err));
     };
 
@@ -27,7 +27,7 @@ class SearchPage extends Component {
 
     getBooks = (q) => {
         API.getBooks(q)
-            .then(res => this.setState({ books: res.data }, this.loadBooks()))
+            .then(res => this.setState({ books: res.data, title: "" }, this.loadBooks()))
             .catch(err => console.log(err));
     };
 
@@ -73,9 +73,21 @@ class SearchPage extends Component {
                 <div className="submit__button">
                     <button onClick={this.handleFormSubmit} className="submit__btn btn btn-primary">GOOGLE SEARCH</button>
                 </div>
+                <div>
+                {this.state.books.map(
+                    (book) => {
+                        console.log(book.volumeInfo.title);
+                        return <div key={book.id}>
+                            {book.volumeInfo.title}
+                        </div>
+                    }
+                )}
+                </div>
             </main>
         )
     };
 };
 
 export default SearchPage;
+
+// how to typed title grab its data.
