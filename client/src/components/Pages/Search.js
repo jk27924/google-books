@@ -13,6 +13,7 @@ class SearchPage extends Component {
         title: ""
     }
 
+
     loadBooks = () => {
         API.getBooks()
             .then(res => {
@@ -21,13 +22,15 @@ class SearchPage extends Component {
             .catch(err => console.log(err));
     };
 
-    componentDidMount = () => {
-        this.loadBooks();
-    };
+
+    // componentDidMount = () => {
+    //     this.loadBooks();
+    // };
+
 
     getBooks = (q) => {
         API.getBooks(q)
-            .then(res => this.setState({ books: res.data, title: "" }, this.loadBooks()))
+            .then(res => this.setState({ books: res.data, title: "" }))
             .catch(err => console.log(err));
     };
 
@@ -45,15 +48,18 @@ class SearchPage extends Component {
         event.preventDefault();
 
         if (this.state.title) {
-        
-        API.getBooks(this.state.title);
-        // API.saveBook({
-        //     title: this.state.title,
-        // })
-        //     .then(res => this.loadBooks())
-        //     .catch(err => console.log(err));
+            API.getBooks({
+                title: this.state.title
+            })
+            .then(res => {
+                // console.log(res);
+                this.setState({ books: res.data.items });
+                console.log(this.state.books);
+            })
+            .catch(err => console.log(err));
         }
     };
+
 
     render () {
         return (
@@ -88,6 +94,5 @@ class SearchPage extends Component {
     };
 };
 
-export default SearchPage;
 
-// how to typed title grab its data.
+export default SearchPage;
