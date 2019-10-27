@@ -27,3 +27,7 @@ input {
 .submit__btn:hover {
     color: rgb(104, 104, 103);
 }
+
+.books-list {
+    color: black;
+}
