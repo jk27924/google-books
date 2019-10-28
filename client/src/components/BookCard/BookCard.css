@@ -1,19 +1,44 @@
 .book-card-container {
-    border: 1px solid black;
-} */
-
-.book-image {
-    width: 600px;
-    height: 600px;
+    margin-left: 5px;
 }
 
-.book-card-container
+.content {
+    border: 1px solid red;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.book-image {
+    margin-top: 30px;
+    width: 200px;
+    height: 230px;
+}
+
+.general-description h2 {
+    color: black;
+    font-size: 20px;
+}
+
 .general-description h3 {
-    color: red;
+    color: black;
+}
+
+.general-description p {
+    color: black;
 }
 
 .book-card-container {
     width: 300px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: 0 auto;
+}
+
+.book-description {
+    height: 200px;
+    /* overflow: hidden; */
+    overflow: scroll;
+}
+
+.title-spacer {
+    height: 50px;
 }

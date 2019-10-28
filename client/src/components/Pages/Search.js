@@ -84,9 +84,9 @@ class SearchPage extends Component {
                 {this.state.books.map(
                     (book) => {
                         console.log(book.volumeInfo.title);
-                        return <div className="books-list" key={book.id}>
-                            {book.volumeInfo.title}
-                        </div>
+                        // return <div className="books-list" key={book.id}>
+                        //     {book.volumeInfo.title}
+                        // </div>
                     }
                 )}
                 </div>

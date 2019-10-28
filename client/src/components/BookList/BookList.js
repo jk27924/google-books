@@ -15,6 +15,7 @@ const BookList = (props) => {
                                 link={book.volumeInfo.infoLink}
                                 title={book.volumeInfo.title}
                             />
+                            // Create Button Component DIV
                 })
             }
         </div>
