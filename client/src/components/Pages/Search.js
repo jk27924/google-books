@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import "./Search.css";
 import API from "../../utils/API";
 import Jumbotron from "../Jumbotron/Jumbotron";
+import BookList from "../BookList/BookList";
 
 class SearchPage extends Component {
 // onClick for the submit button.
@@ -89,6 +90,7 @@ class SearchPage extends Component {
                     }
                 )}
                 </div>
+                <BookList books={this.state.books} />
             </main>
         )
     };
