@@ -1,0 +1,19 @@
+.book-card-container {
+    border: 1px solid black;
+} */
+
+.book-image {
+    width: 600px;
+    height: 600px;
+}
+
+.book-card-container
+.general-description h3 {
+    color: red;
+}
+
+.book-card-container {
+    width: 300px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
